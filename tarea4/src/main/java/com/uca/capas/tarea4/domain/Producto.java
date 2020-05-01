@@ -25,6 +25,8 @@ public class Producto {
 	String descripcion;
 	
 	@NotEmpty(message="Existencias no puede estar vacío")
+	//^\d+$:  Campo obligatorio.  Admite uno o más dígitos.
+	//^\d*$:  Campo opcional.  Admite cero o más dígitos.
 	@Pattern(regexp="^\\d+$", message="Existencias debe tener solo números enteros")
 	String existencias;
 	
