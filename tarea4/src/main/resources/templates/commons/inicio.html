@@ -1,0 +1,60 @@
+ <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<h2>Registrar Producto</h2>
+	
+	<form method="post" th:action="@{/procesar}" th:object="${producto}">
+	<!-- Lo que hace el th:object es indicarle a thymeleaf que utilice el objeto enviado desde el controlador 
+	para asociarlo a ese formulario. Se especifica el nombre del objeto que es enviado desde el controlador
+	en el ModelAndView , en nuestro caso será una instancia de la clase Usuario -->
+	
+		<div>
+			<label for="codigo">Código: </label>
+			<input id="codigo" type="number" th:field="*{codigo}" placeholder="Ingrese el código" style="width: 400px" name="codigo"/>
+			<span th:errors="*{codigo}" style="color: #FF0000"></span>
+		</div><br>
+		
+		<div>
+			<label for="nombre">Nombre Producto: </label>
+			<input id="nombre" type="text" th:field="*{nombre}" placeholder="Ingrese Nombre del Procuto" style="width: 400px" name="nombre"/>
+			<span th:errors="*{nombre}" style="color: #FF0000"></span>
+		</div><br>
+		
+		<div>
+			<label for="marca">Marca: </label>
+			<input id="marca" type="text" th:field="*{marca}" placeholder="Ingrese la Marca" style="width: 400px" name="marca"/>
+			<span th:errors="*{marca}" style="color: #FF0000"></span>
+		</div><br>
+		
+		<div>
+			<label for="descripcion">Descripción: </label>
+			<input id="descripcion" type="text" th:field="*{descripcion}" placeholder="Ingrese Descripción del Procuto" style="width: 400px" name="descripcion"/>
+			<span th:errors="*{descripcion}" style="color: #FF0000"></span>
+		</div><br>
+		
+		<div>
+			<label for="existencias">Existencias: </label>
+			<input id="existencias" type="number" th:field="*{existencias}" placeholder="Ingrese Existencias del Procuto" style="width: 400px" name="existencias"/>
+			<span th:errors="*{existencias}" style="color: #FF0000"></span>
+		</div><br>
+		
+		<div>
+			<label for="fecha">Fecha Entrada: </label>
+			<input id="fecha" type="text" th:field="*{fecha}"  style="width: 400px" name="fecha"/>
+			<span th:errors="*{fecha}" style="color: #FF0000"></span>
+		</div><br>
+		
+		<div>
+			<input type="submit" value="Guardar Producto">
+		</div>
+	
+	</form>
+					
+				
+</body>
+</html>
