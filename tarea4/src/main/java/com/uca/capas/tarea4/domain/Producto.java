@@ -15,12 +15,12 @@ public class Producto {
 	String nombre;
 	
 	@NotEmpty(message="Marca no puede estar vacío")
-	@Pattern(regexp="^\\S.*$",message="Nombre Producto no puede estar vacío")
+	@Pattern(regexp="^\\S.*$",message="Marca no puede estar vacío")
 	@Size(min=1,max=100, message="Marca debe tener entre 1 y 100 caracteres")
 	String marca;
 	
 	@NotEmpty(message="Descripción no puede estar vacío")
-	@Pattern(regexp="^\\S.*$",message="Nombre Producto no puede ser solo espacio")
+	@Pattern(regexp="^\\S.*$",message="Descpción no puede ser solo espacio")
 	@Size(min=1,max=500, message="Descripción debe tener entre 1 y 500 caracteres")
 	String descripcion;
 	
